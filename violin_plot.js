@@ -392,8 +392,8 @@ violin_plot("#chart3", "green", "roads");
 violin_plot("#chart4", "red", "medical");
 violin_plot("#chart5", "violet", "buildings");
 
-violin_plot_input("#chart6", "blue", "sewer", "#nHours");
-violin_plot_input("#chart7", "yellow", "power", "#nHours");
-violin_plot_input("#chart8", "green", "roads", "#nHours");
-violin_plot_input("#chart9", "red", "medical", "#nHours");
-violin_plot_input("#chart10", "violet", "buildings", "#nHours");
+violin_plot_input("#chart6", "blue", "sewer", "#nHours6");
+violin_plot_input("#chart7", "yellow", "power", "#nHours7");
+violin_plot_input("#chart8", "green", "roads", "#nHours8");
+violin_plot_input("#chart9", "red", "medical", "#nHours9");
+violin_plot_input("#chart10", "violet", "buildings", "#nHours10");
