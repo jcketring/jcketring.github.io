@@ -44,7 +44,7 @@ function violin_plot(plot_name, color, damage_type) {
     // Features of the histogram
     var histogram = d3.histogram()
         .domain(y.domain())
-        .thresholds(y.ticks(20))
+        .thresholds(y.ticks(11))
         .value(d => d)
 
 
@@ -164,7 +164,7 @@ function violin_plot(plot_name, color, damage_type) {
                     .x0(function(d){ return(xNum(-d.length)) } )
                     .x1(function(d){ return(xNum(d.length)) } )
                     .y(function(d){ return(y(d.x0)) } )
-                    .curve(d3.curveCatmullRom)
+                    .curve(d3.curveCardinal)
                 )
     })
 }
@@ -183,7 +183,6 @@ function violin_plot_input(plot_name, color, damage_type, initial, data) {
         width = 800 - margin.left - margin.right,
         height = 450 - margin.top - margin.bottom;
     
-    console.log(damage_type + initial);
     // append the svg object to the body of the page
     svg = d3.select(plot_name)
     .append("svg")
@@ -222,7 +221,7 @@ function violin_plot_input(plot_name, color, damage_type, initial, data) {
     // Features of the histogram
     var histogram = d3.histogram()
         .domain(y.domain())
-        .thresholds(y.ticks(20))
+        .thresholds(y.ticks(11))
         .value(d => d)
 
 
