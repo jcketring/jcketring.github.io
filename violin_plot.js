@@ -311,7 +311,13 @@ function violin_plot_input(plot_name, color, damage_type, initial, data) {
     }
 
     // Set cap for largest bin number
-    var maxNum = 3000
+    var maxNum = 0
+    for ( i in sumstat ){
+      allBins = sumstat[i].value
+      lengths = allBins.map(function(a){return a.length;})
+      longuest = d3.max(lengths)
+      if (longuest > maxNum) { maxNum = longuest }
+    }
 
     // The maximum width of a violin must be x.bandwidth = the width dedicated to a group
     var xNum = d3.scaleLinear()
@@ -389,9 +395,10 @@ function update(nHours, initial) {
         minTime = minTime.getTime();
         
         filtered_data = [];
-        check_time = minTime + (nHours*3600000);
+        check_time1 = minTime + ((nHours - 1)*3600000);
+        check_time2 = minTime + (nHours*3600000);
         for(i = 0; i < data.length; i++) {
-            if (data[i].time.getTime() < check_time) {
+            if (data[i].time.getTime() > check_time1 && data[i].time.getTime() < check_time2) {
                 filtered_data.push(data[i]);
             }
         }
