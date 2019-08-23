@@ -164,7 +164,7 @@ function violin_plot(plot_name, color, damage_type) {
                     .x0(function(d){ return(xNum(-d.length)) } )
                     .x1(function(d){ return(xNum(d.length)) } )
                     .y(function(d){ return(y(d.x0)) } )
-                    .curve(d3.curveStep)
+                    .curve(d3.curveCatmullRom)
                 )
     })
 }
@@ -339,7 +339,7 @@ function violin_plot_input(plot_name, color, damage_type, initial, data) {
                 .x0(function(d){ return(xNum(-d.length)) } )
                 .x1(function(d){ return(xNum(d.length)) } )
                 .y(function(d){ return(y(d.x0)) } )
-                .curve(d3.curveStep)
+                .curve(d3.curveCatmullRom)
             ) 
 }
 
